@@ -1,43 +1,31 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import PositionBox from "./PositionBox";
 
-function PositionBoxes() {
-  const positionsList = ["ROCK", "PAPER", "SCISSORS"];
-
-  const [position, setPosition] = useState({
-    playerPosition: "",
-    computerPosition: "",
-  });
-
-  const handlePositionClick = (selectedPosition) => {
-    setPosition({
-      playerPosition: selectedPosition,
-      computerPosition: positionsList[Math.floor(Math.random() * 3)],
-    });
-  };
-
-  useEffect(() => {
-    console.log("Player Position:", position.playerPosition);
-    console.log("Computer Position:", position.computerPosition);
-    console.log("----------------------------");
-  }, [position]);
+function PositionBoxes({
+  handlePlayClick,
+  handlePositionSelection,
+  togglePlays,
+  setTogglePlay,
+  selection,
+  bet,
+}) {
   const boxes = [
     {
-      bgColor: "#211f4f",
-      textColor: "#2680ea",
-      borderColor: "#2680ea",
+      bgColor: "bg-[#211f4f]",
+      textColor: "text-[#2680EA]",
+      borderColor: "border-[#2680ea]",
       text: "ROCK",
     },
     {
-      bgColor: "#1A381D",
-      textColor: "#16C359",
-      borderColor: "#16C359",
+      bgColor: "bg-[#1A381D]",
+      textColor: "text-[#16C359]",
+      borderColor: "border-[#16C359]",
       text: "PAPER",
     },
     {
-      bgColor: "#690229",
-      textColor: "#FF004D",
-      borderColor: "#FF004D",
+      bgColor: "bg-[#690229]",
+      textColor: "text-[#FF004D]",
+      borderColor: "border-[#FF004D]",
       text: "SCISSORS",
     },
   ];
@@ -49,7 +37,10 @@ function PositionBoxes() {
           <PositionBox
             key={index}
             box={box}
-            handlePositionClick={handlePositionClick}
+            handlePositionSelection={handlePositionSelection}
+            handlePlayClick={handlePlayClick}
+            selection={selection}
+            bet={bet}
           />
         ))}
       </div>
