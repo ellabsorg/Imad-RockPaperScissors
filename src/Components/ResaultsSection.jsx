@@ -1,8 +1,6 @@
 import React from "react";
 
-function ResaultsSection({ position, togglePlay, bet, resaults }) {
-  console.log(resaults);
-
+function ResaultsSection({ position, togglePlay, bet, resaults, balance }) {
   return (
     <div className=" h-[200px] flex flex-col items-center mb-10 gap-20">
       <div className=" flex justify-center items-start gap-32">
@@ -37,6 +35,9 @@ function ResaultsSection({ position, togglePlay, bet, resaults }) {
           )}
         </div>
       )}
+      <div className="font-bold text-red-600 text-[15px]">
+        {balance === 0 && bet === 0 && "INSUFFICIENT FUNDS"}
+      </div>
     </div>
   );
 }

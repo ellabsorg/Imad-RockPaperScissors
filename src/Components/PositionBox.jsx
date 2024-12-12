@@ -6,11 +6,11 @@ function PositionBox({
   selection,
   bet,
   togglePlay,
+  balance,
 }) {
-
   return (
     <button
-      disabled={!togglePlay}
+      disabled={!togglePlay || (balance === 0 && bet === 0)}
       className={`scale-100 
         ${box.bgColor} ${box.textColor} border-[2px] ${
         selection === box.text ? "scale-125 border-[5px]" : ""

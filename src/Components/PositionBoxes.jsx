@@ -7,6 +7,7 @@ function PositionBoxes({
   togglePlay,
   selection,
   bet,
+  balance,
 }) {
   const boxes = [
     {
@@ -41,6 +42,7 @@ function PositionBoxes({
             selection={selection}
             bet={bet}
             togglePlay={togglePlay}
+            balance={balance}
           />
         ))}
       </div>

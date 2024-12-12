@@ -30,9 +30,8 @@ function Homepage() {
     });
   };
 
-  
   const handlePlayClick = () => {
-    if (position.player === position.computer) {
+    if (position.player === position.computer && position.player !== "") {
       setResaults("tie");
       dispatch({
         type: Actions.HANDLE_TIE,
@@ -65,6 +64,7 @@ function Homepage() {
         position={position}
         bet={state.bet}
         togglePlay={togglePlay}
+        balance={state.balance}
       />
       <PositionBoxes
         handlePlayClick={handlePlayClick}
@@ -73,6 +73,7 @@ function Homepage() {
         setTogglePlay={setTogglePlay}
         selection={position.player}
         bet={state.bet}
+        balance={state?.balance}
       />
       <Button
         handlePlayClick={handlePlayClick}
