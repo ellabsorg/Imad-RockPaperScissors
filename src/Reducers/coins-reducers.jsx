@@ -1,4 +1,3 @@
-
 export const INITIAL_VALUE = {
   balance: 5000,
   bet: 0,
@@ -33,10 +32,7 @@ export const reducerFunction = (state, action) => {
         bet: 0,
       };
     case "HANDLE_LOSE":
-      return {
-        ...state,
-        bet: 0,
-      };
+      return state
     case "HANDLE_TIE":
       return {
         ...state,

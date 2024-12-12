@@ -1,11 +1,17 @@
 import React from "react";
 
-function PositionBox({ box, handlePositionSelection, selection, bet }) {
-  const isButtonDisabled = selection !== box.text && selection !== "";
+function PositionBox({
+  box,
+  handlePositionSelection,
+  selection,
+  bet,
+  togglePlay,
+}) {
+  // const isButtonDisabled = selection !== box.text && selection !== "";
 
   return (
     <button
-      disabled={isButtonDisabled}
+      disabled={!togglePlay}
       className={`scale-100 
         ${box.bgColor} ${box.textColor} border-[2px] ${
         selection === box.text ? "scale-125 border-[5px]" : ""

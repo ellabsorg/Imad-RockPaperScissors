@@ -4,8 +4,7 @@ import PositionBox from "./PositionBox";
 function PositionBoxes({
   handlePlayClick,
   handlePositionSelection,
-  togglePlays,
-  setTogglePlay,
+  togglePlay,
   selection,
   bet,
 }) {
@@ -41,6 +40,7 @@ function PositionBoxes({
             handlePlayClick={handlePlayClick}
             selection={selection}
             bet={bet}
+            togglePlay={togglePlay}
           />
         ))}
       </div>
