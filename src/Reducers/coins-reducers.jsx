@@ -15,11 +15,18 @@ export const Actions = {
 export const reducerFunction = (state, action) => {
   switch (action.type) {
     case "HANDLE_BET":
-      return {
-        ...state,
-        balance: state.balance - 500,
-        bet: state.bet + 500,
-      };
+      if (state.balance > 0) {
+        return {
+          ...state,
+          balance: state.balance - 500,
+          bet: state.bet + 500,
+        };
+      } else {
+        return {
+          ...state,
+          balance: 0,
+        };
+      }
     case "HANDLE_WIN":
       return {
         ...state,
@@ -32,11 +39,13 @@ export const reducerFunction = (state, action) => {
         bet: 0,
       };
     case "HANDLE_LOSE":
-      return state
+      return state;
     case "HANDLE_TIE":
       return {
         ...state,
         balance: state.balance + state.bet,
       };
+    default:
+      return state;
   }
 };

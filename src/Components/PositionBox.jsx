@@ -7,7 +7,6 @@ function PositionBox({
   bet,
   togglePlay,
 }) {
-  // const isButtonDisabled = selection !== box.text && selection !== "";
 
   return (
     <button

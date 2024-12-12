@@ -29,6 +29,8 @@ function Homepage() {
       type: Actions.HANDLE_BET,
     });
   };
+
+  
   const handlePlayClick = () => {
     if (position.player === position.computer) {
       setResaults("tie");
